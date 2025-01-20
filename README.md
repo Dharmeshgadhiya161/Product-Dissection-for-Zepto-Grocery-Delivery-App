@@ -11,7 +11,7 @@ Zepto is a detail-oriented and intense business with technical and operating dis
 
 #
 
--- USERS TABLE
+###-- USERS TABLE
 CREATE TABLE Users (
     user_id INT PRIMARY KEY AUTO_INCREMENT,
     user_name VARCHAR(100) NOT NULL,
@@ -29,7 +29,7 @@ INSERT INTO Users (user_name, email, address, phone_number) VALUES
 ('Diana', 'diana@example.com', '321 Pine St, Ogdenville', '4444444444'),
 ('Eve', 'eve@example.com', '654 Willow St, Springfield', '3333333333');
 
--- CATEGORIES TABLE
+##-- CATEGORIES TABLE
 CREATE TABLE Categories (
     category_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -43,7 +43,7 @@ INSERT INTO Categories (name, description) VALUES
 ('Home & Kitchen', 'Home appliances and kitchenware'),
 ('Toys', 'Toys and games for all ages');
 
--- PRODUCTS TABLE
+##-- PRODUCTS TABLE 
 CREATE TABLE Products (
     product_id INT PRIMARY KEY AUTO_INCREMENT,
     name VARCHAR(100) NOT NULL,
@@ -64,7 +64,7 @@ INSERT INTO Products (name, image_url, description, price, stock_quantity, categ
 ('T-shirt', 'https://example.com/tshirt.jpg', 'Comfortable T-shirt', 15.99, 200, 3),
 ('Blender', 'https://example.com/blender.jpg', 'High-speed blender', 49.99, 70, 4);
 
--- ORDERS TABLE
+##-- ORDERS TABLE
 CREATE TABLE Orders (
     order_id INT PRIMARY KEY AUTO_INCREMENT,
     user_id INT NOT NULL,
@@ -87,7 +87,7 @@ INSERT INTO Orders (user_id, total_amount, status, delivery_address, delivery_ti
 (4, 16.00, 'Canceled', '321 Pine St, Ogdenville', '10 AM - 12 PM', 'Pending', 'Express'),
 (5, 50.00, 'Delivered', '654 Willow St, Springfield', '1 PM - 3 PM', 'Paid', 'Standard');
 
--- ORDER ITEMS TABLE
+##-- ORDER ITEMS TABLE
 CREATE TABLE OrderItems (
     order_item_id INT PRIMARY KEY AUTO_INCREMENT,
     order_id INT NOT NULL,
@@ -106,7 +106,7 @@ INSERT INTO OrderItems (order_id, product_id, quantity, unit_price) VALUES
 (4, 4, 1, 15.99),
 (5, 5, 1, 49.99);
 
--- PAYMENTS TABLE
+##-- PAYMENTS TABLE
 CREATE TABLE Payments (
     payment_id INT PRIMARY KEY AUTO_INCREMENT,
     order_id INT NOT NULL,
@@ -126,7 +126,7 @@ INSERT INTO Payments (order_id, amount_paid, payment_method, payment_status, tra
 (4, 16.00, 'UPI', 'Failed', 'TXN004'),
 (5, 50.00, 'Cash', 'Completed', 'TXN005');
 
--- DELIVERIES TABLE
+##-- DELIVERIES TABLE
 CREATE TABLE Deliveries (
     delivery_id INT PRIMARY KEY AUTO_INCREMENT,
     order_id INT NOT NULL,
@@ -147,7 +147,7 @@ INSERT INTO Deliveries (order_id, delivery_person_name, delivery_address, status
 (4, 'Jack', '321 Pine St, Ogdenville', 'Canceled', 'Order was canceled'),
 (5, 'Emma', '654 Willow St, Springfield', 'Delivered', 'Delivered with care');
 
--- REVIEWS TABLE
+##-- REVIEWS TABLE
 CREATE TABLE Reviews (
     review_id INT PRIMARY KEY AUTO_INCREMENT,
     product_id INT NOT NULL,
@@ -166,7 +166,7 @@ INSERT INTO Reviews (product_id, user_id, rating, review_text) VALUES
 (4, 4, 2, 'Not as expected'),
 (5, 5, 5, 'Excellent value for money');
 
--- DARK STORES TABLE
+##-- DARK STORES TABLE
 CREATE TABLE DarkStores (
     store_id INT PRIMARY KEY AUTO_INCREMENT,
     product_id INT NOT NULL,
